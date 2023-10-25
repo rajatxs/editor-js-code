@@ -1,77 +1,86 @@
-![](https://badgen.net/badge/Editor.js/v2.0/blue)
+# Custom Code Plugin for Editor.js
 
-# Code Tool for Editor.js
+The Custom Code Plugin for Editor.js enables you to incorporate code examples into your articles, along with a dropdown for selecting the language mode.
 
-Code Tool for the [Editor.js](https://ifmo.su/editor) allows to include code examples in your articles.
-
-![](https://capella.pics/8df022f5-b4d5-4d30-a527-2a0efb63f291.jpg)
+> This plugin is compatible with Vite 4.
 
 ## Installation
 
-### Install via NPM
-
-Get the package
+Install plugin in your existing project.
 
 ```shell
-npm i --save-dev @editorjs/code
-```
-
-Include module at your application
-
-```javascript
-const CodeTool = require('@editorjs/code');
-```
-
-### Download to your project's source dir
-
-1. Upload folder `dist` from repository
-2. Add `dist/bundle.js` file to your page.
-
-### Load from CDN
-
-You can load specific version of package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@editorjs/code).
-
-`https://cdn.jsdelivr.net/npm/@editorjs/code@2.0.0`
-
-Require this script on a page with Editor.js.
-
-```html
-<script src="..."></script>
+npm i @rxpm/editor-js-code
 ```
 
 ## Usage
 
-Add a new Tool to the `tools` property of the Editor.js initial config.
+Include plugin in your application.
 
 ```javascript
-var editor = EditorJS({
+import CodeTool from '@rxpm/editor-js-code';
+```
+
+Register the plugin in the `tools` property of the Editor.js configuration.
+
+```javascript
+const editor = EditorJS({
   ...
-  
   tools: {
-    ...
-    code: CodeTool,
+    code: CodeTool
   }
-  
+
+  ...
+});
+```
+
+Provide additional language modes.
+
+```javascript
+const editor = EditorJS({
+  ...
+  tools: {
+    code: {
+      class: CodeTool,
+      config: {
+        modes: {
+          'js': 'JavaScript',
+          'py': 'Python',
+          'go': 'Go',
+          'cpp': 'C++',
+          'cs': 'C#',
+          'md': 'Markdown',
+        },
+        defaultMode: 'go',
+      },
+    }
+  }
+
   ...
 });
 ```
 
 ## Config Params
 
-| Field       | Type     | Description                    |
-| ----------- | -------- | -------------------------------|
-| placeholder | `string` | Code Tool's placeholder string |
+This plugin supports additional configuration parameters.
 
-## Output data
+| Field       | Type     | Description                    | Default                    |
+| ----------- | -------- | -------------------------------| ---------------------------|
+| placeholder | `string` | Placeholder string | `Enter a code` |
+| modes | `object` | Supported language modes | `{ text: "Plain Text" }` |
+| defaultMode | `string` | Default selected language mode | `text` |
 
-This Tool returns code.
+## Output Data
+
+Editor.js will produce the following code block.
 
 ```json
 {
-    "type" : "code",
-    "data" : {
-        "code": "body {\n font-size: 14px;\n line-height: 16px;\n}",
-    }
+  "type": "code",
+  "data": {
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    messages := make(chan string)\n\n    go func() { messages <- \"ping\" }()\n\n    msg := <-messages\n    fmt.Println(msg)\n}",
+    "mode": "go"
+  }
 }
 ```
 
+For more information or inquiries, please contact the project owner: Rajat (rxx256+github@outlook.com)

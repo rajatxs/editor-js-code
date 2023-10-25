@@ -1,8 +1,7 @@
-.idea/
 src/
+.prettierrc
 .eslintrc
 .jshintrc
 .postcssrc
 .stylelintrc
 webpack.config.js
-yarn.lock

@@ -12,3 +12,16 @@
     overflow-x: auto;
     resize: vertical;
 }
+
+.rxpm-code__selector {
+    min-width: 58pt;
+    height: 24pt;
+    padding-left: 3pt;
+    padding-right: 3pt;
+    margin-bottom: 6pt;
+    outline: none;
+    border: 1px solid #DDD;
+    border-radius: 6px;
+    background-color: inherit;
+    color: inherit;
+}
