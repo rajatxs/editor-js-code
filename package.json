@@ -13,6 +13,12 @@
     "email": "rxx256+npm@outlook.com",
     "url": "https://github.com/rajatxs"
   },
+  "repository": "https://github.com/rajatxs/editor-js-code.git",
+  "readme": "https://github.com/rajatxs/editor-js-code#readme",
+  "bugs": {
+    "email": "rxx256+npm@outlook.com"
+  },
+  "markdown": "github",
   "dependencies": {
     "@codexteam/icons": "^0.0.5"
   }
