@@ -4,6 +4,8 @@ The Custom Code Plugin for Editor.js enables you to incorporate code examples in
 
 > This plugin is compatible with Vite 4.
 
+![Preview](https://res.cloudinary.com/dcwxfpep4/image/upload/v1698238204/screens/urdh4xfraz4dmim3lbsb.webp)
+
 ## Installation
 
 Install plugin in your existing project.
