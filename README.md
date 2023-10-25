@@ -2,7 +2,7 @@
 
 The Custom Code Plugin for Editor.js enables you to incorporate code examples into your articles, along with a dropdown for selecting the language mode.
 
-> This plugin is compatible with Vite 4.
+> This plugin is only compatible with Vite 4.
 
 ![Preview](https://res.cloudinary.com/dcwxfpep4/image/upload/v1698238204/screens/urdh4xfraz4dmim3lbsb.webp)
 
@@ -52,8 +52,8 @@ const editor = EditorJS({
           'cs': 'C#',
           'md': 'Markdown',
         },
-        defaultMode: 'go',
-      },
+        defaultMode: 'go'
+      }
     }
   }
 
