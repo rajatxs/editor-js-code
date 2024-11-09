@@ -85,4 +85,4 @@ Editor.js will produce the following code block.
 }
 ```
 
-For more information or inquiries, please contact the project owner: Rajat (rxx256+github@outlook.com)
+For more information or inquiries, please contact the project owner: Rajat (rajatxt@proton.me)
